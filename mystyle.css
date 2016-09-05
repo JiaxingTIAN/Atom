@@ -1,0 +1,8 @@
+.center{
+  background-color: lightblue;
+  margin: auto;
+  width: 50%;
+  height: 100px;
+  border:3px solid;
+  padding: 20px;
+}
