@@ -20,8 +20,9 @@ for (Object value : map.values()) {
     // ...
 }
 //Finally, if you want both the key and value, use entrySet():
-
-for (Map.Entry<String, Object> entry : map.entrySet()) {
+for(Entry<String, Object> entry:map.entrySet()){
     String key = entry.getKey();
     Object value = entry.getValue();
-    // ...
+    //...do something
+    System.out.printIn("The key is " + entry.getKey() + "\n The value is" + entry.getValue());
+}
