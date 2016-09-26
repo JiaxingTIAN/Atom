@@ -20,3 +20,7 @@ public class Pair<K, V> {
     public K getKey()   { return key; }
     public V getValue() { return value; }
 }
+
+Pair<Integer, String> p1 = new Pair<>(1, "apple");
+Pair<Integer, String> p2 = new Pair<>(2, "pear");
+boolean same = Util.compare(p1, p2);
