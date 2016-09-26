@@ -35,3 +35,20 @@ awk 'NR == 10' file.txt
 
 # Solution 3 Using stream editor
 sed -n 10p file.txt
+
+# Read from the file file.txt and print its transposed content to stdout.
+awk '
+{
+    for (i = 1; i <= NF; i++) {
+        if(NR == 1) {
+            s[i] = $i;
+        } else {
+            s[i] = s[i] " " $i;
+        }
+    }
+}
+END {
+    for (i = 1; s[i] != ""; i++) {
+        print s[i];
+    }
+}' file.txt
