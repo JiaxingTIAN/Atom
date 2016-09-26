@@ -37,6 +37,7 @@ awk 'NR == 10' file.txt
 sed -n 10p file.txt
 
 # Read from the file file.txt and print its transposed content to stdout.
+# NF sparated be ' ' or specify with -F $i 
 awk '
 {
     for (i = 1; i <= NF; i++) {
