@@ -37,13 +37,14 @@ awk 'NR == 10' file.txt
 sed -n 10p file.txt
 
 # Read from the file file.txt and print its transposed content to stdout.
-# NF sparated be ' ' or specify with -F $i 
+# Each line has an according NR and NF, NF sparated by ' ' or specify with -F $i 
 awk '
 {
     for (i = 1; i <= NF; i++) {
+        # It outputs all the word of $i line by line
         if(NR == 1) {
             s[i] = $i;
-        } else {
+        } else {  # Combine with the previous string
             s[i] = s[i] " " $i;
         }
     }
@@ -53,3 +54,6 @@ END {
         print s[i];
     }
 }' file.txt
+
+wc -l file.txt  #Count the number of lines in a file
+awk '{print NR-1 " " $0}' file.txt  #Output the line count at the beginning of the line
