@@ -29,7 +29,9 @@ done < file.txt
 # Solution 2
 awk 'FNR == 10 {print }'  file.txt
 # OR
+# NR number of record
+# NF number of field
 awk 'NR == 10' file.txt
 
-# Solution 3
+# Solution 3 Using stream editor
 sed -n 10p file.txt
