@@ -14,3 +14,13 @@
 
 grep -P "^(\d{3}-|\([0-9]{3}\) )\d{3}-\d{4}$" file.txt
 
+# Read from the file file.txt and output the tenth line to stdout.
+count=0
+while read line && [ $count -le 10 ]; do
+    let 'count += 1'
+    if [ $count -eq 10 ]; then
+        echo $line
+        exit 0
+        #return
+    fi
+done < file.txt
