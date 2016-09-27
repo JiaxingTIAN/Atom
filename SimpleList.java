@@ -192,7 +192,7 @@ public class SimpleIntList implements Cloneable {
 		return null;
 	}
 	
-	@Override
+	@Override	//override the default clone function for deep copy
 	public SimpleIntList clone() throws CloneNotSupportedException{
 		SimpleIntList list = new SimpleIntList();
 		list.size = 0;
