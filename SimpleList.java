@@ -1,6 +1,8 @@
 package classExercise;
 
-// In-class Exercise on 09/19/2016
+// Implement Cloneable to use defaule clone function 
+// public Object clone() throws CloneNotSupportedException {return super.clone();}
+// Or implement your own clone(){}
 public class SimpleIntList implements Cloneable {
 
 	private static class Node{
