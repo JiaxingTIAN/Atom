@@ -40,6 +40,21 @@ public class Solution{
             //...do something
             System.out.printIn("The key is " + entry.getKey() + "\n The value is" + entry.getValue());
         }
+        //Java 8 support for anomyous function
+        Runnable runnable = () -> {
+        try {
+            String name = Thread.currentThread().getName();
+            System.out.println("Foo " + name);
+            TimeUnit.SECONDS.sleep(1);
+            System.out.println("Bar " + name);
+        }
+        catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+};
+
+Thread thread = new Thread(runnable);
+thread.start();
         
     }
     
