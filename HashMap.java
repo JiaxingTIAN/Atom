@@ -13,12 +13,12 @@ public class Solution{
     }
     public static void main(String[] args){
         Map<String, Integer> syncList = Collections.synchronizedMap(new TreeMap<>());
-        synchronized(syncList){
+        synchronized(syncList){     //Obtian the lock of the syncList
             syncList.add("Star");
             syncList.add("Loves");
             syncList.add("Offers");
         }
-        synchronized(this){
+        synchronized(this){     //Obtain the lock of this (class/instance)
             //Synchronized block
         }
    
