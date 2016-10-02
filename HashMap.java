@@ -12,8 +12,8 @@ public class Solution{
         }
     }
     public static void main(String[] args){
-        Map<String, Integer> syncList = Collections.synchronizedMap(new TreeMap<>());
-        synchronized(syncList){     //Obtian the lock of the syncList
+        Map<String, Integer> syncMap = Collections.synchronizedMap(new TreeMap<>());
+        synchronized(syncMap){     //Obtian the lock of the syncList
             syncList.add("Star");
             syncList.add("Loves");
             syncList.add("Offers");
