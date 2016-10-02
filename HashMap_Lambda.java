@@ -42,20 +42,25 @@ public class Solution{
         }
         //Java 8 support for anonymous function just like lambda
         Runnable runnable = () -> {
-        try {
-            String name = Thread.currentThread().getName();
-            System.out.println("Foo " + name);
-            TimeUnit.SECONDS.sleep(1);
-            System.out.println("Bar " + name);
-        }
-        catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-};
+            try {
+                String name = Thread.currentThread().getName();
+                System.out.println("Foo " + name);
+                TimeUnit.SECONDS.sleep(1);
+                System.out.println("Bar " + name);
+            }
+            catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        };
 
-Thread thread = new Thread(runnable);
-thread.start();
+        Thread thread = new Thread(runnable);
+        thread.start();
         
+        Queue<Integer> heap = new PriorityQueue<>( (a, b) -> b - a);    //Decreasing order
+        heap.offer(4);
+        heap.offer(6);
+        heap.offer(3);
+        heap.forEach(System.out::print);    //643
     }
     
     class animate implements Runnable{
