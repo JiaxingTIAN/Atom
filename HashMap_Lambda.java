@@ -60,7 +60,7 @@ thread.start();
     
     class animate implements Runnable{
         Thread myThread;
-        private Lock myLock;
+        private Lock myLock = new ReentrantLock();
         public animate(){
         };
         public void animateStart(){
