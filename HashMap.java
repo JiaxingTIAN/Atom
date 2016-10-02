@@ -1,6 +1,8 @@
 public class Solution{
     //Synchronized method cannot be called by different thread at same time
     //Static synchronized methods of same class cannot be called at same time
+    //Reentrant locking, the thread that holds the lock can acquire the same lock
+    //A thread can call a synchronized method recursivly and can itself call other synchronized methods within the same object
     public static synchronized void printMap(Map mp) {
         Iterator it = mp.entrySet().iterator();
         while (it.hasNext()) {
