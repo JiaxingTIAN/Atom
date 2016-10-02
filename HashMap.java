@@ -9,10 +9,6 @@ public class Solution{
             it.remove(); // avoids a ConcurrentModificationException
         }
     }
-
-    //If you're only interested in the keys, you can iterate through the keySet() of the map:
-    private Lock lock;
-    
     public static void main(String[] args){
         Map<String, Integer> syncList = Collections.synchronizedMap(new TreeMap<>());
         synchronized(syncList){
@@ -23,10 +19,9 @@ public class Solution{
         synchronized(this){
             //Synchronized block
         }
-        
+   
         Map<String, Object> map = ...;
-        
-        lock.lock();
+        //If you're only interested in the keys, you can iterate through the keySet() of the map:
         for (String key : map.keySet()) {
             // ...
         }
@@ -42,11 +37,12 @@ public class Solution{
             //...do something
             System.out.printIn("The key is " + entry.getKey() + "\n The value is" + entry.getValue());
         }
-        lock.unlock();
+        
     }
     
     class animate implements Runnable{
         Thread myThread;
+        private Lock myLock;
         public animate(){
             //Create the object and it starts run the thread with run()
             myThread = new Thread(this);
@@ -54,7 +50,9 @@ public class Solution{
         }
         @Override
         public void run(){
+            myLock.lock();
             Thread.sleep(3000); //sleep static method of Thread
+            myLock.unlock();
         }
     }
 }
