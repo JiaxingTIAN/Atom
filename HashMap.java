@@ -1,5 +1,6 @@
 public class Solution{
     //Synchronized method cannot be called by different thread at same time
+    //All synchronized method of a instance share the same lock
     //Static synchronized methods of same class cannot be called at same time
     //Reentrant locking, the thread that holds the lock can acquire the same lock
     //A thread can call a synchronized method recursivly and can itself call other synchronized methods within the same object
