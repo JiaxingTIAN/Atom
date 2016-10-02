@@ -73,6 +73,15 @@ thread.start();
         public void run(){
             myLock.lock();
             Thread.sleep(3000); //sleep static method of Thread
+            //Old way:
+            List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7);
+            for(Integer n: list) {
+                System.out.println(n);
+            }
+            //New way:
+            list.forEach(n -> System.out.println(n));
+            //or we can use :: double colon operator in Java 8
+            list.forEach(System.out::println);
             myLock.unlock();
         }
     }
