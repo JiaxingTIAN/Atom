@@ -52,6 +52,7 @@ public class Solution{
             //Create the object and it starts run the thread with run()
             myThread = new Thread(this);
             myThread.start();
+            //myThread.stop(); wait(), notify;
         }
         @Override
         public void run(){
