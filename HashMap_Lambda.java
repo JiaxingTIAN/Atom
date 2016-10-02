@@ -90,5 +90,15 @@ public class Solution{
             myLock.unlock();
         }
     }
+    
+    //A Java abstract class is a class that can't be instantiated. That means you cannot create new instances of an abstract class. 
+    //It works as a base for subclasses. You should learn about Java Inheritance before attempting this challenge
+    abstract class Book{
+        String title;
+        abstract void setTitle(String s);
+        String getTitle(){
+            return title;
+        }
+    }
 }
 
