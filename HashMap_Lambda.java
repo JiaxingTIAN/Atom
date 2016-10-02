@@ -100,5 +100,27 @@ public class Solution{
             return title;
         }
     }
+
+    class MyBook extends Book{
+        void setTitle(String s){
+            title=s;
+        }
+    }
+
+    //A interface only has the signature and fields
+    interface AdvancedArithmetic {
+        public abstract int divisorSum(int n);
+    }
+
+    //Solution starts
+    class MyCalculator implements AdvancedArithmetic {
+        public int divisor_sum(int n) {
+            int ans = 0;
+            for (int i = 1; i <= n; i++) {
+                if (n % i == 0) ans += i;
+            }
+            return ans;
+        }
+    }
 }
 
