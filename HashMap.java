@@ -44,5 +44,18 @@ public class Solution{
         }
         lock.unlock();
     }
+    
+    class animate implements Runnable{
+        Thread myThread;
+        public animate(){
+            //Create the object and it starts run the thread with run()
+            myThread = new Thread(this);
+            myThread.start();
+        }
+        @Override
+        public void run(){
+            Thread.sleep(3000); //sleep static method of Thread
+        }
+    }
 }
 
