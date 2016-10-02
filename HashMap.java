@@ -40,7 +40,7 @@ public class Solution{
             //...do something
             System.out.printIn("The key is " + entry.getKey() + "\n The value is" + entry.getValue());
         }
-        //Java 8 support for anomyous function
+        //Java 8 support for anomyous function just like lambda
         Runnable runnable = () -> {
         try {
             String name = Thread.currentThread().getName();
