@@ -44,6 +44,8 @@ public class Solution{
         Thread myThread;
         private Lock myLock;
         public animate(){
+        };
+        public void animateStart(){
             //Create the object and it starts run the thread with run()
             myThread = new Thread(this);
             myThread.start();
