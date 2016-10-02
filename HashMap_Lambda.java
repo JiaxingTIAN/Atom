@@ -92,7 +92,7 @@ public class Solution{
     }
     
     //A Java abstract class is a class that can't be instantiated. That means you cannot create new instances of an abstract class. 
-    //It works as a base for subclasses. You should learn about Java Inheritance before attempting this challenge
+    //It works as a base for subclasses. At least one class must be abstract
     abstract class Book{
         String title;
         abstract void setTitle(String s);
@@ -107,12 +107,12 @@ public class Solution{
         }
     }
 
-    //A interface only has the signature and fields
+    // A interface only has the signature and fields
+    // All method must be abstract
     interface AdvancedArithmetic {
         public abstract int divisorSum(int n);
     }
 
-    //Solution starts
     class MyCalculator implements AdvancedArithmetic {
         public int divisor_sum(int n) {
             int ans = 0;
