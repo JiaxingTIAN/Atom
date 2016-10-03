@@ -38,6 +38,9 @@ public class ThreadExample {
 }
 
 //Wait & Notify
+//Main thread and thread b concurrent operate
+//when main thread need result from b, it wait for b to complete
+//b will notify if it is completed
 public class ThreadA {
     public static void main(String[] args){
         ThreadB b = new ThreadB();
