@@ -14,7 +14,7 @@ class XThread extends Thread {
 }
 
 public class ThreadExample {
-
+	AtomicBoolean autoBoolean = new AtomicBoolean();	//perform compound operation without synchronized block
 	public static void main(String[] args) {
 		Thread thread1 = new Thread(new XThread(), "thread1");
 		Thread thread2 = new Thread(new XThread(), "thread2");
