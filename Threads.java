@@ -1,5 +1,6 @@
-class XThread extends Thread {
-
+class XThread<T> extends Thread {
+	T sample;	//Generic type
+	
 	XThread() {
 	}
 	XThread(String threadName) {
@@ -11,17 +12,22 @@ class XThread extends Thread {
 		//Display info about this particular thread
 		System.out.println(Thread.currentThread().getName());
 	}
+	//If T is indicated by the class -> no need to re-indicate again in the method
+	public void setT(T t){
+		sample  = t;
+	}
 }
 
 public class ThreadExample {
 	AtomicBoolean autoBoolean = new AtomicBoolean();	//perform compound operation without synchronized block
 	public static void main(String[] args) {
-		Thread thread1 = new Thread(new XThread(), "thread1");
-		Thread thread2 = new Thread(new XThread(), "thread2");
+		Thread thread1 = new Thread(new XThread<String>(), "thread1");
+		Thread thread2 = new Thread(new XThread<Integer>(), "thread2");
 		//	    The below 2 threads are assigned default names
-		Thread thread3 = new XThread();
-		Thread thread4 = new XThread();
-		Thread thread5 = new XThread("thread5");
+		Thread thread3 = new XThread<Integer>();
+		Thread thread4 = new XThread<Double>();
+		Thread thread5 = new XThread<String>("thread5");
+		XThread t = thread1; 	//Reference no need to provide generic type
 		//Start the threads
 		thread1.start();
 		thread2.start();
@@ -34,6 +40,10 @@ public class ThreadExample {
 		}
 		//Display info about the main thread
 		System.out.println(Thread.currentThread());
+	}
+	//If not indicated by class, must add before return type
+	public <T> void compare(T a, T b){
+		return (int)a - (int) b;
 	}
 }
 
